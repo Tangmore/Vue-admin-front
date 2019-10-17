@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>template3.1</title>
+  </head>
+  <style > 
+    html,body{
+      overflow: hidden;
+      height: 100%;
+    }
+    #app{
+      width:100%;
+      height: 100%;
+      position:relative;
+    }
+    .processcontainer{
+      width:400px;
+      border-radius: 15px;
+      height:30px;
+      overflow: hidden;
+      position:absolute;
+      margin:auto;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+    }
+    /* #processbar{
+      height:100%;
+      width:800px;
+      background: -webkit-repeating-linear-gradient(30deg, rgba(26, 179, 148, 1) 0, rgba(26, 179, 148, 1) 10px,rgba(26, 179, 148, 0.7) 10px, rgba(26, 179, 148, 0.7) 20px);
+      -webkit-animation: move 5s linear infinite;
+    } */
+    .text{
+      width: 400px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: rgba(255, 255, 255, 1);
+      font-family: arial;
+    }
+    @-webkit-keyframes move{
+      0%{
+        background-position: 0 0;
+      }
+      100%{
+        background-position: -100px 0;
+      }
+    }
+    body .layui-layer-dialog .layui-layer-btn .layui-layer-btn0 {
+      border-color: var(--mygray);
+      background-color: var(--mygray);
+      color: #fff;
+    }
+    body .layui-layer-dialog .layui-layer-btn .layui-layer-btn1 {
+      border-color: var(--activecolor);
+      background-color: var(--activecolor);
+      color: #fff;
+    }
+  </style>
+  <body>
+    <div id="app" >
+      <div class="processcontainer">
+        <!-- <div id="processbar" ><div class="text">LOADING...</div></div> -->
+        <!--style="width:0%;"-->
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+ 
+  </script>
+</html>

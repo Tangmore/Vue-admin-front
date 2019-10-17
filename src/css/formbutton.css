@@ -1,0 +1,185 @@
+/*form表单和按钮的样式*/
+.el-dialog__wrapper >>>.el-form,
+.el-form{
+  text-align: left;
+}
+.el-dialog__wrapper >>>.el-form .el-input__inner,
+.el-form >>> .el-input__inner{
+  /*width: 100%;*/
+  height: 32px;
+  line-height: 32px;
+  border-radius: 6px;
+}
+/*.el-input__icon {*/
+  /*line-height: 32px;*/
+/*}*/
+/*switch*/
+.el-dialog__wrapper >>>.el-form .el-switch.is-checked .el-switch__core,
+.el-form >>> .el-switch.is-checked .el-switch__core{
+  border-color: var(--activecolor);
+  background-color: var(--activecolor);
+}
+/*check*/
+.el-dialog__wrapper >>>.el-form .el-checkbox__input.is-checked+.el-checkbox__label,
+.el-form >>> .el-checkbox__input.is-checked+.el-checkbox__label{
+  color: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-form .el-checkbox__input.is-checked .el-checkbox__inner,
+.el-dialog__wrapper >>>.el-form .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-form >>> .el-checkbox__input.is-checked .el-checkbox__inner,
+.el-form >>> .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: var(--activecolor);
+  border-color: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-form .el-checkbox__input .el-checkbox__inner:hover,
+.el-dialog__wrapper >>>.el-form .el-checkbox__input.is-focus .el-checkbox__inner,
+.el-form >>> .el-checkbox__input .el-checkbox__inner:hover,
+.el-form >>> .el-checkbox__input.is-focus .el-checkbox__inner{
+  border-color: var(--activecolor);
+}
+/*radio*/
+.el-dialog__wrapper >>>.el-form .el-radio__input.is-checked+.el-radio__label,
+.el-form >>>.el-radio__input.is-checked+.el-radio__label{
+  color: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-form .el-radio__input.is-checked .el-radio__inner,
+.el-form >>>.el-radio__input.is-checked .el-radio__inner {
+  border-color: var(--activecolor);
+  background: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-form .el-radio__inner:hover,
+.el-form >>>.el-radio__inner:hover{
+  border-color: var(--activecolor);
+}
+/*下拉框和文本框*/
+.el-dialog__wrapper >>>.el-form .el-select-dropdown__item.selected,
+.el-form >>> .el-select-dropdown__item.selected {
+  color: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-form .el-textarea__inner:focus,
+.el-dialog__wrapper >>>.el-form .el-select .el-input__inner:focus,
+.el-dialog__wrapper >>>.el-form .el-pagination__sizes .el-input .el-input__inner:hover,
+.el-dialog__wrapper >>>.el-form .el-select .el-input.is-focus .el-input__inner,
+.el-dialog__wrapper >>>.el-form .el-input__inner:focus,
+.el-form >>>.el-textarea__inner:focus,
+.el-form >>>.el-select .el-input__inner:focus,
+.el-form >>>.el-pagination__sizes .el-input .el-input__inner:hover,
+.el-form >>>.el-select .el-input.is-focus .el-input__inner,
+.el-form >>>.el-input__inner:focus{
+  border-color: var(--activecolor);
+}
+.el-form >>>.el-form-item {
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+.el-form >>>.el-form-item__label{
+  padding: 0 10px 0 0;
+}
+/*按钮*/
+.el-dialog__wrapper >>>.el-button--small,
+.el-dialog__wrapper >>>.el-button--small.is-round,
+.el-button--small, .el-button--small.is-round {
+  padding: 8px 10px;
+}
+.el-dialog__wrapper >>>.el-button--mini,
+.el-dialog__wrapper >>>.el-button--small,
+.el-button--mini, .el-button--small {
+  font-size: 14px;
+  border-radius: 6px;
+}
+.el-dialog__wrapper >>>.el-button--small{
+  height: 38px;
+}
+
+.el-dialog__wrapper >>>.el-button--default,
+.el-dialog__wrapper >>>.el-button--default:focus,
+.el-button--default,.el-button--default:focus{
+  width: 100px;
+  background-color: var(--mygray);
+  border-color: var(--mygray);
+  color: #FFF;
+}
+.el-dialog__wrapper >>>.el-button--default:hover,
+.el-button--default:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--mygray);
+  border-color: var(--mygray);
+  color: #FFF;
+}
+.el-dialog__wrapper >>>.el-button--primary,
+.el-dialog__wrapper >>>.el-button--primary:focus,
+.el-button--primary,.el-button--primary:focus{
+  width: 100px;
+  background-color: var(--activecolor);
+  border-color: var(--activecolor);
+}
+.el-dialog__wrapper >>>.el-button--primary:hover,
+.el-button--primary:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--activecolor);
+  border-color: var(--activecolor);
+}
+.el-button--myblue,.el-button--myblue:focus{
+  width: 100px;
+  background-color: var(--myblue);
+  border-color: var(--myblue);
+  color: #FFF;
+}
+.el-button--myblue:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--myblue);
+  border-color: var(--myblue);
+  color: #FFF;
+}
+.el-button--myyellow,.el-button--myyellow:focus{
+  width: 100px;
+  background-color: var(--myyellow);
+  border-color: var(--myyellow);
+  color: #FFF;
+}
+.el-button--myyellow:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--myyellow);
+  border-color: var(--myyellow);
+  color: #FFF;
+}
+.el-button--myred,.el-button--myred:focus{
+  width: 100px;
+  background-color: var(--myred);
+  border-color: var(--myred);
+  color: #FFF;
+}
+.el-button--myred:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--myred);
+  border-color: var(--myred);
+  color: #FFF;
+}
+.el-button--myskyblue,.el-button--myskyblue:focus{
+  width: 100px;
+  background-color: var(--myskyblue);
+  border-color: var(--myskyblue);
+  color: #FFF;
+}
+.el-button--myskyblue:hover{
+  opacity:0.8;
+  filter: alpha(opacity=80);
+  background-color: var(--myskyblue);
+  border-color: var(--myskyblue);
+  color: #FFF;
+}
+/*弹出层表单按钮居中*/
+.el-dialog__wrapper >>>.el-form .buttonCenter .el-form-item__content{
+  text-align: center;
+  margin-left: 0 !important;
+}
+
+/*上传附件*/
+.el-form >>> .el-upload-list li a:hover{
+  color: var(--activecolor);
+}

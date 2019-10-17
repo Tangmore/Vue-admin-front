@@ -1,0 +1,106 @@
+section.el-container{
+    background: rgba(246, 245, 250, 1) !important;
+}
+ 
+.home-page {
+    height: calc(100%);
+    color: rgba(135, 135, 135, 1);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.home-page>>>.el-col {
+    height: 100%;
+}
+
+.archive-borrow-count-title {
+    text-align: left;
+    border-left: 4px solid var(--activecolor);
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 4px;
+    color: rgba(135, 135, 135, 1);
+}
+/* 今日档案比 */
+.box {
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    margin-bottom: 22px;
+}
+.box .box-item{
+    padding:0 10px;
+    height: 100%;
+}
+.today-archive-count .box .box-item .el-row{
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+}
+.today-archive-count .el-col .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    line-height:  5.4rem;
+    margin: 10px auto;
+}
+
+.today-archive-count .left-title {
+    font-size: 14px;
+    font-weight: 400px;
+    padding-top: 20px;
+}
+
+.today-archive-count .el-progress {
+    width: 100%;
+    height: 14px;
+    overflow: hidden;
+}
+
+.right-today-count {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
+}
+
+.right-today-percent {
+    margin-bottom: 0;
+    text-align: left;
+    margin-left: 16px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.right-all-count {
+    float: right;
+    width: 60%;
+    height: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    color: #FFF;
+    line-height: 25px;
+    padding: 0 6px;
+}
+
+/* 公告 */
+.notice{
+    background: #fff;
+    height: 100%;
+}
+.notice-box {
+    height: 180px;
+    overflow: auto;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+#now-notice {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(135, 135, 135, 1);
+    line-height: 9px;
+}

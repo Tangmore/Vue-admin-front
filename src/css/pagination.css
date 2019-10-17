@@ -1,0 +1,30 @@
+/*分页*/
+.el-pagination {
+  padding: 10px 5px;
+}
+.el-pagination.is-background >>> .btn-next,
+.el-pagination.is-background >>> .btn-prev,
+.el-pagination.is-background >>> .el-pager li {
+  background-color: #fff;
+  border:1px solid rgba(223,223,223,1);
+  border-radius:5px;
+  color:#878787;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+}
+.el-pagination.is-background >>> .el-pager li:not(.disabled).active {
+  background-color: var(--activecolor);
+}
+.el-pagination.is-background >>> .el-pager li:not(.active):hover{
+  color: var(--activecolor);
+}
+.el-pagination >>> .el-pagination__jump {
+  margin-left: 0;
+}
+.el-pagination >>> .el-select .el-input__inner:focus,
+.el-pagination >>> .el-pagination__sizes .el-input .el-input__inner:hover,
+.el-pagination >>> .el-select .el-input.is-focus .el-input__inner,
+.el-pagination >>> .el-input__inner:focus{
+  border-color: var(--activecolor);
+}
+

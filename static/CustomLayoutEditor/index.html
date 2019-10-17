@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>ibootstrap - 可视化布局系统</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/styles/simditor.css"/>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://ibootstrap-file.b0.upaiyun.com/www.layoutit.com/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript"-->
+            <!--src="./js/jquery.ui.touch-punch.min.js"></script>-->
+    <!--<script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.1/js/bootstrap.min.js"></script>-->
+
+    <script type="text/javascript" src="js/htmlClean.js"></script>
+    <script src="layui/layui.all.js"></script>
+
+</head>
+<style>
+    .layui-input, .layui-textarea {
+        /*width: 80%*/
+    }
+    #error_tip{
+        color:  red;
+        font-size: 14px;
+        margin-left: 110px;
+        padding-bottom: 4px;
+    }
+    /*.layui-layer-content{*/
+        /*width: 95%;*/
+    /*}*/
+    /*富文本边距*/
+    .simditor{
+        margin-bottom: 15px;
+    }
+</style>
+<body class="edit">
+<div class="header">
+    <div class="layui-logo"><h2>可视化布局</h2></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <div class="btn-group">
+        <button class="layui-btn layui-btn-xs" id="edit">编辑</button>
+        <!--<button class="layui-btn layui-btn-xs" id="download-btn">下载</button>-->
+        <button class="layui-btn layui-btn-xs" id="sourcepreview">预览</button>
+        <button class="layui-btn layui-btn-xs" id="upload-btn">上传</button>
+    </div>
+</div>
+<!--/.navbar-fixed-top -->
+<div class="container">
+  <div class="row">
+    <div class="">
+      <div class="sidebar-nav">
+
+        <ul class="nav nav-list accordion-group">
+          <li class="nav-header">
+            <i class="glyphicon-plus glyphicon"></i>
+            布局设置
+          </li>
+          <li class="rows" id="estRows">
+
+            <div class="lyrow">
+              <a href="#close" class="remove label label-danger">
+                <i class="glyphicon-remove glyphicon"></i>
+                删除
+              </a>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                <i class="layui-icon">&#xe609;</i>拖动
+                            </span>
+              <div class="lyrow ui-draggable">
+                                <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                    <i class="layui-icon">&#x1006;</i>删除
+                                </span>
+                <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+                <div class="preview">
+                  <input type="text" value="12" class="form-control layui-disabled" disabled>
+                </div>
+                <div class="view">
+                  <div class="layui-form-item">
+                    <div class="row clearfix">
+                      <div class="layui-col-md12 column"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lyrow">
+              <a href="#close" class="remove label label-danger">
+                <i class="glyphicon-remove glyphicon"></i>
+                删除
+              </a>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                <i class="layui-icon">&#xe609;</i>拖动
+                            </span>
+              <div class="lyrow ui-draggable">
+                                <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                    <i class="layui-icon">&#x1006;</i>删除
+                                </span>
+                <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+                <div class="preview">
+                  <input type="text" value="6 6" class="form-control">
+                </div>
+                <div class="view">
+                  <div class="layui-form-item">
+                    <div class="row clearfix">
+                      <div class="layui-col-md6 column"></div>
+                      <div class="layui-col-md6 column"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lyrow ui-draggable">
+                                <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                    <i class="layui-icon">&#x1006;</i>删除
+                                </span>
+                <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+                <div class="preview">
+                  <input type="text" value="8 4" class="form-control">
+                </div>
+                <div class="view">
+                  <div class="layui-form-item">
+                    <div class="row clearfix">
+                      <div class="layui-col-md8 column"></div>
+                      <div class="layui-col-md4 column"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lyrow ui-draggable">
+                                <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                    <i class="layui-icon">&#x1006;</i>删除
+                                </span>
+                <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+                <div class="preview">
+                  <input type="text" value="4 4 4" class="form-control">
+                </div>
+                <div class="view">
+                  <div class="layui-form-item">
+                    <div class="row clearfix">
+                      <div class="layui-col-md4 column"></div>
+                      <div class="layui-col-md4 column"></div>
+                      <div class="layui-col-md4 column"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lyrow ui-draggable">
+                                <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                    <i class="layui-icon">&#x1006;</i>删除
+                                </span>
+                <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+                <div class="preview">
+                  <input type="text" value="2 6 4" class="form-control">
+                </div>
+                <div class="view">
+                  <div class="layui-form-item">
+                    <div class="row clearfix">
+                      <div class="layui-col-md2 column"></div>
+                      <div class="layui-col-md6 column"></div>
+                      <div class="layui-col-md4 column"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+
+        <ul class="nav nav-list accordion-group">
+          <li class="nav-header">
+            <i class="glyphicon glyphicon-plus"></i>
+            组件
+          </li>
+          <li class="boxes" id="elmBase">
+            <div class="box box-element">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                <i class="layui-icon">&#xe609;</i>拖动
+                            </span>
+              <div class="preview">文本框</div>
+              <div class="view" data-flag="input">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框 ：</label>
+                  <div class="layui-input-block">
+                    <input type="text" required
+                           placeholder="请输入信息" name="text"
+                           autocomplete="off" class="layui-input">
+                  </div>
+                  <input type="textType" name="text" class="hide" placeholder="请输入信息" data-url="">
+                </div>
+              </div>
+            </div>
+            <div class="box box-element">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+              <div class="preview">选择框</div>
+              <div class="view"  data-flag="select">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">选择框 :</label>
+                  <div class="layui-input-block">
+                    <select name="city" class="yuq">
+                      <option value="">全部</option>
+                      <option value="0">选项一</option>
+                      <option value="1">选项二</option>
+                      <option value="2">选项三</option>
+                      <option value="3">选项四</option>
+                      <option value="4">选项五</option>
+                    </select>
+                  </div>
+                  <input type="selectType" name="select" class="hide" placeholder="请输入信息">
+                </div>
+              </div>
+            </div>
+            <div class="box box-element">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+              <div class="preview">复选框</div>
+              <div class="view"  data-flag="checkbox">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">复选框 :</label>
+                  <div class="layui-input-block yuq">
+                    <input type="checkbox" name="option1" title="选项一">
+                    <input type="checkbox" name="option2" title="选项二" checked>
+                    <input type="checkbox" name="option3" title="选项三">
+                  </div>
+                  <input type="checkboxType"  name="checkbox" class="hide">
+                </div>
+              </div>
+            </div>
+            <div class="box box-element">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                                </span>
+              <div class="preview">单选框</div>
+              <div class="view"  data-flag="radio">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">单选框 :</label>
+                  <div class="layui-input-block yuq">
+                    <input type="radio" name="radio" value="选项一" title="选项一">
+                    <input type="radio" name="radio" value="选项二" title="选项二" checked>
+                  </div>
+                  <input type="radioType" name="radio" class="hide">
+                </div>
+              </div>
+            </div>
+            <div class="box box-element">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                    <i class="layui-icon">&#xe609;</i>拖动
+                            </span>
+              <div class="preview">文本域</div>
+              <div class="view"  data-flag="textarea">
+                <div class="layui-form-item layui-form-text">
+                  <label class="layui-form-label">文本域 :</label>
+                  <div class="layui-input-block">
+                    <textarea name="text" required placeholder="请输入信息" class="layui-textarea yuq"></textarea>
+                  </div>
+                  <input type="textareaType" name="textarea" class="hide" data-url="" placeholder="请输入信息">
+                </div>
+              </div>
+            </div>
+            <div class="box box-element" data-tag="rich-text">
+                            <span class="remove layui-btn layui-btn-xs layui-btn-danger">
+                                <i class="layui-icon">&#x1006;</i>删除
+                            </span>
+              <span class="box-edit layui-btn layui-btn-xs">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </span>
+              <span class="drag layui-btn layui-btn-xs layui-btn-primary">
+                                <i class="layui-icon">&#xe609;</i>拖动
+                            </span>
+              <div class="preview">富文本</div>
+              <div class="view"  data-flag="richText">
+                <textarea id="editor"></textarea>
+                <input type="richTextType" name="richText" class="hide" data-url="" placeholder="请输入信息">
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <!--/span-->
+    <div class="demo layui-form">
+    </div>
+    <!--/span-->
+    <!--组件属性内容编辑块-->
+    <div class="layui-preview" id="layer-text" style="margin:10px auto;margin-right: 20px">
+      <form class="layui-form" lay-filter='form-text'>
+        <div class="layui-form-item">
+          <label class="layui-form-label">标题：</label>
+          <div class="layui-input-block" >
+            <input type="text" name="title" required placeholder="请输入标题"
+                   autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item" id="alertShow">
+          <label class="layui-form-label">提示信息：</label>
+          <div class="layui-input-block">
+            <input type="text" name="tipsinfo" required lay-verify="placeholder" placeholder="请输入提示信息"
+                   autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item" id="dirShow">
+          <label class="layui-form-label">数据字典：</label>
+          <div class="layui-input-block">
+            <input type="button" name="dictionary" id="dictionary" value="请选择数据字典"
+                   class="layui-btn layui-btn-sm"/>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <!-- <div class="layui-inline"> -->
+          <label class="layui-form-label">字段名：</label>
+          <div class="layui-input-block">
+            <input type="text" name="fieldname" autocomplete="off" class="layui-input" required
+                   lay-verify="required|english">
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">是否必填：</label>
+          <div class="layui-input-block">
+            <input type="radio" name="required" value="1" title="是" checked>
+            <input type="radio" name="required" value="0" title="否">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <!-- <div class="layui-inline"> -->
+          <label class="layui-form-label">最小长度：</label>
+          <div class="layui-input-block">
+            <input type="number" name="minlength" autocomplete="off" class="layui-input" min="0"
+                   placeholder="用户可输入的最小长度">
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">最大长度：</label>
+          <div class="layui-input-block">
+            <input type="number" name="maxlength" autocomplete="off" class="layui-input" min="0"
+                   placeholder="用户可输入的最大长度">
+          </div>
+          <span style="display: none" id="error_tip" ></span>
+        </div>
+
+        <div class="layui-form-item" >
+          <div class="layui-input-block" style="margin-left: 166px">
+            <button class="layui-btn" lay-submit lay-filter="determine">确定</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+
+    <div id="download-layout">
+      <div class="container"></div>
+    </div>
+
+    <div class="dictionary-box hide" id="dicBox">
+      <div class="aside">
+        <ul id="list"></ul>
+      </div>
+      <div class="main"></div>
+    </div>
+  </div>
+  <!--/row-->
+
+</div>
+<!--/.fluid-container-->
+
+<script type="text/javascript">
+  window.uploadId = null;
+  // 最大最小值控制
+  $("input[name='minlength']").blur(()=>{
+    var maxvalue=$("input[name='maxlength']").val();
+    var minvalue= $("input[name='minlength']").val();
+    if(minvalue>maxvalue){
+      $("input[name='maxlength']").val(minvalue);
+    }
+    if(minvalue<0){
+      $("input[name='minlength']").val(0);
+      $("input[name='maxlength']").val(0);
+    }
+    if(minvalue<=maxvalue){
+      $('#error_tip').hide();
+    }
+  })
+  $("input[name='maxlength']").blur(()=>{
+    var maxvalue=$("input[name='maxlength']").val();
+    var minvalue= $("input[name='minlength']").val();
+    //  if(maxvalue<0){
+    //     // $("input[name='maxlength']").val(0);
+    //  }
+    if(minvalue>maxvalue){
+      $('#error_tip').show().html('最小长度不能大于最大长度!');
+    }else{
+      $('#error_tip').hide();
+    }
+  })
+  function getInfo() {
+    let ele = $('.demo').find('.view').find('.view');
+    let data = [];
+    for (let i = 0; i < ele.length; i++) {
+      if(ele.eq(i)[0] === arguments[0]){
+
+      }else{
+        let title = ele.eq(i).find('label').text().split(' ')[0],
+          field = ele.eq(i).find('.hide').attr('name'),
+          type = ele.eq(i).find('.hide').attr('type'),
+          tipsinfo = ele.eq(i).find('.hide').attr('placeholder')|| '请输入信息',
+          required = ele.eq(i).find('.hide').attr('data-required'),
+          minlength = ele.eq(i).find('.hide').attr('minlength') || 0,
+          maxlength = ele.eq(i).find('.hide').attr('maxlength') || 10,
+          url = ele.eq(i).find('.hide').attr('data-url') || '';
+        let dataArr=[];
+        if(type==="selectType" ){
+          dataArr=[{value: '', label: '全部'},{value:'1', label: '选项一'},{value:'2', label: '选项二'},{value:'3', label: '选项三'},{value:'4', label: '选项四'},{value:'5', label: '选项五'}];
+        }
+        if(type==="radioType" ){
+          dataArr=[{value:'1', label: '选项一'},{value:'2', label: '选项二'}];
+        }
+        if(type==="checkboxType" ){
+          dataArr=[{value:'1', label: '选项一'},{value:'2', label: '选项二'},{value:'3', label: '选项三'}];
+        }
+        if(url){
+          parent.app.getAsync('authmodule/sysTbDictCode/selectArcModelId?'+url,'', function (res) {
+            if (res.state && res.rows.length>0) {
+              dataArr=[];
+              if(type==="selectType" ){
+                dataArr=[{value: '', label: '全部'}];
+              }
+              for (let select of res.rows){
+                dataArr.push({
+                  value: select.code,
+                  label: select.svalue
+                })
+              }
+            }
+          })
+        }
+        let urlArr=dataArr;
+
+        let info = {
+          title: title,
+          field: field,
+          type:type,
+          required: required==="1"?'true':'false',
+          tipsinfo: tipsinfo,
+          minlength: minlength,
+          maxlength: maxlength,
+          url: url,
+          urlArr:urlArr
+        };
+        data.push(info);
+      }
+    }
+    return data;
+  }
+</script>
+</body>
+<script type="text/javascript" src="assets/scripts/module.js"></script>
+<script type="text/javascript" src="assets/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="assets/scripts/uploader.js"></script>
+<script type="text/javascript" src="assets/scripts/dompurify.js"></script>
+<script type="text/javascript" src="assets/scripts/simditor.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    var editor = new Simditor({
+        textarea: $('#editor'),
+        //optional options
+        toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color',
+            'ol', 'ul', 'blockquote', 'code',           //# code block
+            'table', 'link', 'image', 'hr',            // # horizontal ruler
+            'indent', 'outdent', 'alignment',]
+    });
+</script>
+</html>

@@ -1,0 +1,14 @@
+.isdisabled{
+  display: none;
+  position: absolute;
+  z-index: 99;
+  margin-top: 14px;
+  border: 1px solid #E4E7ED;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  width: 170px;
+}
+.isdisabled.istrue{
+  display: block;
+}
